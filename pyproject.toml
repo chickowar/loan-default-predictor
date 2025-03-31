@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "loan-default-predictor"
+version = "0.1.0"
+description = ""
+authors = ["KruTimurch <chickowarus@yandex.ru>"]
+readme = "README.md"
+packages = [{include = "loan_default_predictor", from = "src"}] 
+
+[tool.poetry.dependencies]
+python = "^3.11"
+torch = "^2.6.0"
+torchvision = "^0.21.0"
+torchaudio = "^2.6.0"
+pandas = "^2.2.3"
+numpy = "^2.2.4"
+scikit-learn = "^1.6.1"
+matplotlib = "^3.10.1"
+seaborn = "^0.13.2"
+jupyter = "^1.1.1"
+tensorboard = "^2.19.0"
+
+[[tool.poetry.source]]
+name = "torch-cuda"
+url = "https://download.pytorch.org/whl/cu118"
+default = false
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
