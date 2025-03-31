@@ -10,11 +10,11 @@ def train_model(model, X_train, y_train, X_test, y_test,
                 epochs=10, batch_size=32, lr=0.01, seed=42, weight_decay=0.0,
                 log_dir="runs/default", experiment="1"):
 
-    print(f"🔬 Запущен эксперимент № {experiment}")
+    print(f"Запущен эксперимент № {experiment}")
 
     # 💻 Автоматический выбор устройства
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"📦 Используем устройство: {device}")
+    print(f"Используем устройство: {device}")
     model = model.to(device)
 
     torch.manual_seed(seed)
@@ -78,7 +78,7 @@ def train_model(model, X_train, y_train, X_test, y_test,
             best_auc = test_auc
 
             torch.save(model.state_dict(), f"checkpoints/best_model_exp_{experiment}.pt")
-            print(f"✅ Модель сохранена (epoch {best_epoch}, test loss = {best_loss:.4f}, AUC = {best_auc:.4f})")
+            print(f"!!! Модель сохранена (epoch {best_epoch}, test loss = {best_loss:.4f}, AUC = {best_auc:.4f})")
 
         writer.add_scalars("Loss", {
             "Train": train_loss,

@@ -61,7 +61,7 @@ class BlockWithSkipBN(nn.Module):
         out = self.fc1(out)
         out = self.relu(out)
         out = self.fc2(out)
-        return out + x  # skip connection
+        return out + x
 
 
 class DeepNetWithSkipBN(nn.Module):
