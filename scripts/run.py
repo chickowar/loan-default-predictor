@@ -74,7 +74,7 @@ def main():
         for wd in weight_decays:
             for lr in learning_rates:
                 print(f"\n🚀 Запуск с weight_decay={wd}, lr={lr}")
-                model = DeepNetWithDropout(input_size=input_size, hidden_size=128, dropout_p=0.2)
+                model = DeepNetWithDropout(input_size=input_size, hidden_size=128, dropout_p=0.5) # dropout_p=0.5 показал себя лучше всего
                 auc = train_model(
                     model=model,
                     X_train=X_train,
